@@ -14,5 +14,5 @@ CREATE VIEW v_client_Commande AS(
     FROM commande co
     LEFT JOIN client cl ON cl.id = co.idClient
 );
-SELECT * FROM v_client_Commande;
+
 -- ON UTILISE LEFT JOIN POUR AFFICHER TOUTES LES COMMANDES, MÊME CELLES SANS CLIENT ASSOCIÉ. SI UNE COMMANDE N'A PAS DE CLIENT, LE NOM DU CLIENT SERA AFFICHÉ COMME 'Client de passage'.

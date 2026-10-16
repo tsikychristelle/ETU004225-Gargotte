@@ -24,6 +24,3 @@ INSERT INTO plat(idCategoriePlat, nom, prix) VALUES
 (3, 'Soupe chinoise', 5000.00),
 (3, 'Mofo Gasy', 250.00),
 (4,'Ranon apango', 500.00);
-SELECT *
-FROM plat p
-ORDER BY p.prix DESC;

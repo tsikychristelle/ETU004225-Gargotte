@@ -32,4 +32,3 @@ CREATE OR REPLACE VIEW v_prixTotal_Par_Commande AS(
     JOIN plat as p on p.id = cp.idPlat
     JOIN commande as c on c.id = cp.idCommande GROUP BY c.id
 );
-SELECT * FROM v_prixTotal_Par_Commande;

@@ -22,7 +22,7 @@ CREATE OR REPLACE VIEW  v_commande_serveur AS(
     FROM commande co
     LEFT JOIN serveur s ON s.id = co.idServeur
 );
-SELECT * FROM v_commande_serveur;
+
 CREATE OR REPLACE VIEW v_prixTotal_Par_Commande_PAR_SERVEUR AS(
     SELECT SUM(cp.quantite*p.prix) AS PrixTotal, c.ID IdCommande, c.date, s.nom AS NomServeur, s.id IdServeur
     FROM commandePlat as cp
@@ -31,7 +31,7 @@ CREATE OR REPLACE VIEW v_prixTotal_Par_Commande_PAR_SERVEUR AS(
     JOIN serveur s on c.idServeur = s.id
     GROUP BY c.id, c.date, s.nom, s.id
 );
-SELECT * FROM v_prixTotal_Par_Commande_PAR_SERVEUR;
+
 CREATE OR REPLACE VIEW v_chiffreAffaireParServeur AS(
     SELECT s.nom AS NomServeur, COUNT(co.id) AS NombreDeCommandes, SUM(v.PrixTotal) AS ChiffeDAffaire
     FROM commande co 
@@ -39,5 +39,5 @@ CREATE OR REPLACE VIEW v_chiffreAffaireParServeur AS(
     LEFT JOIN v_prixTotal_Par_Commande v ON v.IdCommande = co.id
     GROUP BY s.id
 );
-SELECT * FROM v_chiffreAffaireParServeur;
+
 
